@@ -8,7 +8,9 @@ public class BlockDisplayTest extends JavaPlugin {
 
     @Override
     public void onLoad() {
-        CommandAPI.onLoad(new CommandAPIBukkitConfig(this).verboseOutput(true));
+        CommandAPI.onLoad(new CommandAPIBukkitConfig(this)
+                .setNamespace(this.getName())
+                .verboseOutput(true));
         CommandAPI.registerCommand(TestCommand.class);
     }
 

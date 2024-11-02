@@ -96,7 +96,6 @@
             <groupId>dev.jorel</groupId>
             <artifactId>commandapi-bukkit-shade</artifactId>
             <version>9.6.0</version>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>dev.jorel</groupId>
@@ -106,7 +105,7 @@
         </dependency>
     </dependencies>
     <properties>
-        <maven.compiler.release>23</maven.compiler.release>
+        <maven.compiler.release>21</maven.compiler.release>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 

@@ -49,8 +49,8 @@ public class TestCommand {
             }
 
             block.setBillboard(Display.Billboard.FIXED);
-            block.setInterpolationDuration(interDuration);
         });
+        display.setInterpolationDuration(interDuration);
         var end = display.getTransformation();
         display.setTransformation(new Transformation(end.getTranslation(), end.getLeftRotation(),
                 end.getScale().mul(scaleRange.getUpperBound()), end.getRightRotation()));
