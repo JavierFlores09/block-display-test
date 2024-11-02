@@ -1,0 +1,20 @@
+{
+    "name": "Minecraft Development Environment",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "Oracle.oracle-java"
+            ],
+            "settings": {
+                "jdk.jdkhome": "/usr/lib/jvm/zulu23/"
+            }
+        }
+    },
+    "features": {
+        "ghcr.io/devcontainers/features/sshd:1": {}
+    },
+    "forwardPorts": [5150]
+}
