@@ -1,10 +1,18 @@
 package me.javierflores.blockdisplaytest;
 
-import dev.jorel.commandapi.CommandAPI;
-import dev.jorel.commandapi.CommandAPIBukkitConfig;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import dev.jorel.commandapi.CommandAPI;
+import dev.jorel.commandapi.CommandAPIBukkitConfig;
+
 public class BlockDisplayTest extends JavaPlugin {
+
+
+    private static BlockDisplayTest INSTANCE;
+
+    public BlockDisplayTest() {
+        INSTANCE = this;
+    }
 
     @Override
     public void onLoad() {
@@ -22,5 +30,9 @@ public class BlockDisplayTest extends JavaPlugin {
     @Override
     public void onDisable() {
         CommandAPI.onDisable();
+    }
+
+    public static BlockDisplayTest inst() {
+        return INSTANCE;
     }
 }
