@@ -28,16 +28,7 @@ public class TestCommand {
     }
 
     @Default
-    public static void test(Player sender, @AIntegerRangeArgument IntegerRange scaleRange,
-            @AIntegerArgument(min = 0, max = 59) int interDuration, @AIntegerArgument int delay) {
-        var target = sender.getTargetBlockExact(10);
-        test(sender, scaleRange, interDuration,
-                target == null ? Material.PRISMARINE.createBlockData() : target.getBlockData(), delay);
-    }
-
-    @Default
-    public static void test(Player sender, @AIntegerRangeArgument IntegerRange scaleRange,
-            @AIntegerArgument(min = 0, max = 59) int interDuration,
+    public static void test(Player sender, @AIntegerRangeArgument IntegerRange scaleRange, @AIntegerArgument int duration,
             @ABlockStateArgument BlockData blockData, @AIntegerArgument int delay) {
         var location = sender.getLocation();
         if (location == null) {
@@ -66,7 +57,7 @@ public class TestCommand {
         delayed(delay, 
         () -> {
             display.setInterpolationDelay(-1);
-            display.setInterpolationDuration(interDuration);
+            display.setInterpolationDuration(duration);
             var end = display.getTransformation();
         display.setTransformation(new Transformation(end.getTranslation(), end.getLeftRotation(),
                 end.getScale().mul(scaleRange.getUpperBound()), end.getRightRotation()));
